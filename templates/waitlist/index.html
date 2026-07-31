@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Healing Circle — Join the waitlist</title>
+<meta name="description" content="A private, anonymous space to track what actually helps and connect with people who understand — alongside the support you already have, not instead of it." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* ---- Palette (derived from brief: dark forest / sage-lime / cream) ---- */
+    --forest-950:#142B21;
+    --forest-700:#1F4A34;
+    --forest-600:#2C5940;
+    --forest-500:#3C6B4F;
+    --sage-300:#9FC6A0;
+    --sage-200:#C4DEC2;
+    --lime-400:#A9D65C;
+    --lime-300:#C3E68D;
+    --cream-100:#FBF7EC;
+    --cream-200:#F1EAD6;
+    --cream-300:#E7DEC4;
+
+    --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body:'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --max-w:1180px;
+    --radius-sm:10px;
+    --radius-md:18px;
+    --radius-lg:32px;
+
+    --ease: cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *, *::before, *::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--cream-100);
+    color:var(--forest-950);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    margin:0;
+    color:var(--forest-950);
+    letter-spacing:-0.01em;
+  }
+
+  p{ margin:0; }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--forest-500);
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--lime-400);
+    flex:none;
+  }
+
+  :focus-visible{
+    outline:2.5px solid var(--forest-700);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  /* ================= Header ================= */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,247,236,0.86);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(20,43,33,0.08);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:16px;
+    padding-bottom:16px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-family:var(--font-display);
+    font-weight:600;
+    font-size:19px;
+    color:var(--forest-950);
+  }
+  .logo-mark{
+    width:26px; height:26px;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 35% 32%, var(--lime-400) 0%, transparent 45%),
+      var(--forest-700);
+    flex:none;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:14.5px;
+    letter-spacing:0.01em;
+    padding:12px 22px;
+    border-radius:999px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease), background-color .25s var(--ease), color .25s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--forest-700);
+    color:var(--cream-100);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 28px -12px rgba(20,43,33,0.45);
+    background:var(--forest-950);
+  }
+  .btn-primary:active{ transform:translateY(0); }
+  .nav .btn{ padding:10px 20px; font-size:13.5px; }
+
+  /* ================= Hero ================= */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding-top:clamp(56px, 8vw, 96px);
+    padding-bottom:clamp(64px, 9vw, 110px);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr);
+    gap:clamp(32px, 5vw, 64px);
+    align-items:center;
+  }
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 64px);
+    line-height:1.05;
+    margin-top:18px;
+    max-width:15ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--forest-700);
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:clamp(16.5px, 1.6vw, 19px);
+    line-height:1.65;
+    color:var(--forest-600);
+    max-width:46ch;
+  }
+
+  .hero-tagline{
+    margin-top:14px;
+    font-family:var(--font-display);
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(17px, 1.9vw, 21px);
+    color:var(--forest-700);
+    max-width:38ch;
+  }
+
+  .hero-highlights{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .hero-highlight{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .hero-highlight-badge{
+    flex:none;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:var(--cream-200);
+    border:1px solid rgba(20,43,33,0.10);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16.5px;
+    line-height:1;
+  }
+  .hero-highlight h3{
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:15.5px;
+    color:var(--forest-950);
+    margin:2px 0 4px;
+  }
+  .hero-highlight p{
+    font-size:15px;
+    line-height:1.55;
+    color:var(--forest-600);
+    max-width:44ch;
+  }
+
+  /* ---- signature visual: drifting circle cluster ---- */
+  .cluster{
+    position:relative;
+    width:100%;
+    aspect-ratio:1/1;
+    max-width:460px;
+    margin:0 auto;
+  }
+  .cluster span{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(0.4px);
+    mix-blend-mode:multiply;
+    animation: drift var(--dur,18s) ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cluster span{ animation:none; }
+  }
+  @keyframes drift{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(var(--dx,14px), var(--dy,-10px)) scale(var(--sc,1.04)); }
+  }
+  .c1{ width:58%; height:58%; top:4%; left:6%; background:radial-gradient(circle at 35% 30%, var(--sage-200), var(--sage-300) 70%); opacity:.85; --dur:22s; --dx:16px; --dy:10px; }
+  .c2{ width:40%; height:40%; bottom:6%; left:0%; background:radial-gradient(circle at 40% 35%, var(--lime-300), var(--lime-400) 75%); opacity:.75; --dur:16s; --delay:-4s; --dx:-10px; --dy:14px; --sc:1.07; }
+  .c3{ width:46%; height:46%; bottom:0%; right:2%; background:radial-gradient(circle at 35% 30%, #cfe4c9, var(--forest-500) 120%); opacity:.55; --dur:26s; --delay:-9s; --dx:-14px; --dy:-8px; }
+  .c4{ width:26%; height:26%; top:10%; right:8%; background:radial-gradient(circle at 40% 35%, var(--cream-200), var(--sage-300) 90%); opacity:.9; --dur:14s; --delay:-2s; --dx:12px; --dy:-16px; --sc:1.1; }
+  .c5{ width:20%; height:20%; top:42%; left:36%; background:radial-gradient(circle at 40% 35%, var(--lime-300), var(--forest-500) 130%); opacity:.65; --dur:19s; --delay:-6s; --dx:-8px; --dy:12px; }
+  .cluster-word{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    pointer-events:none;
+  }
+  .cluster-word span{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:clamp(14px,1.6vw,16px);
+    color:var(--forest-950);
+    background:rgba(251,247,236,0.72);
+    padding:10px 16px;
+    border-radius:999px;
+    max-width:180px;
+    line-height:1.3;
+    display:inline-block;
+  }
+
+  /* ================= Form ================= */
+  .waitlist-form{
+    margin-top:32px;
+    display:flex;
+    gap:10px;
+    max-width:460px;
+  }
+  @media (max-width:480px){
+    .waitlist-form{ flex-direction:column; }
+  }
+  .field{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+  .field label{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--forest-500);
+    margin-bottom:7px;
+  }
+  .field input{
+    font-family:var(--font-body);
+    font-size:15.5px;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1.5px solid rgba(20,43,33,0.18);
+    background:var(--cream-100);
+    color:var(--forest-950);
+    transition:border-color .2s var(--ease), box-shadow .2s var(--ease);
+    width:100%;
+  }
+  .field input::placeholder{ color:rgba(20,43,33,0.38); }
+  .field input:focus{
+    outline:none;
+    border-color:var(--forest-700);
+    box-shadow:0 0 0 4px rgba(31,74,52,0.12);
+  }
+  .field input[aria-invalid="true"]{
+    border-color:#B4544A;
+    box-shadow:0 0 0 4px rgba(180,84,74,0.12);
+  }
+  .waitlist-form .btn{ align-self:flex-end; height:50px; }
+  @media (max-width:480px){
+    .waitlist-form .btn{ align-self:stretch; }
+  }
+
+  .form-msg{
+    margin-top:12px;
+    font-size:14px;
+    min-height:20px;
+  }
+  .form-msg[data-state="error"]{ color:#B4544A; }
+  .form-msg[data-state="success"]{ color:var(--forest-700); font-weight:700; }
+
+  .microtrust{
+    margin-top:16px;
+    font-size:13.5px;
+    color:var(--forest-500);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+
+  /* ---- Waiting-count social proof, shown just above each form ---- */
+  .waiting-count{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:16px;
+  }
+  .avatar-stack{
+    display:flex;
+    flex:none;
+  }
+  .avatar-stack span{
+    width:26px; height:26px;
+    border-radius:50%;
+    border:2px solid var(--cream-100);
+    margin-left:-9px;
+  }
+  .avatar-stack span:first-child{ margin-left:0; }
+  .avatar-stack span:nth-child(1){ background:var(--forest-600); }
+  .avatar-stack span:nth-child(2){ background:var(--sage-300); }
+  .avatar-stack span:nth-child(3){ background:var(--lime-400); }
+  .avatar-stack span:nth-child(4){ background:var(--forest-500); }
+  .waiting-count p{
+    font-size:14px;
+    color:var(--forest-600);
+  }
+  .waiting-count strong{
+    color:var(--forest-950);
+    font-weight:700;
+  }
+  .cta-band .avatar-stack span{ border-color:var(--forest-950); }
+  .cta-band .waiting-count p{ color:var(--sage-200); }
+  .cta-band .waiting-count strong{ color:var(--cream-100); }
+
+  /* ================= Sections shared ================= */
+  section{ padding-top:clamp(64px,8vw,104px); padding-bottom:clamp(64px,8vw,104px); }
+  .band-alt{ background:var(--cream-200); }
+  .section-head{
+    max-width:640px;
+    margin-bottom:clamp(36px,5vw,56px);
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.4vw,40px);
+    line-height:1.15;
+    margin-top:14px;
+  }
+  .section-head p{
+    margin-top:16px;
+    font-size:16.5px;
+    color:var(--forest-600);
+    line-height:1.65;
+  }
+
+  /* ---- Problem / validation list ---- */
+  .validate-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+  }
+  @media (max-width:860px){ .validate-list{ grid-template-columns:1fr; gap:28px; } }
+  .validate-item{ display:flex; gap:16px; }
+  .validate-glyph{
+    flex:none;
+    width:34px; height:34px;
+    border-radius:50%;
+    border:1.5px solid var(--forest-700);
+    position:relative;
+  }
+  .validate-glyph::after{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border-radius:50%;
+    background:var(--lime-400);
+  }
+  .validate-item p{ color:var(--forest-950); font-size:16px; line-height:1.55; }
+  .validate-item strong{ font-family:var(--font-display); font-weight:600; display:block; margin-bottom:4px; font-size:18px; }
+
+  /* ---- Feature cards ---- */
+  .features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  @media (max-width:900px){ .features{ grid-template-columns:1fr; } }
+  .feature-card{
+    background:var(--cream-100);
+    border:1.5px solid rgba(20,43,33,0.10);
+    border-radius:var(--radius-md);
+    padding:30px 26px;
+  }
+  .feature-icon{
+    width:46px; height:46px;
+    margin-bottom:20px;
+  }
+  .feature-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    color:var(--forest-600);
+    font-size:15.5px;
+    line-height:1.6;
+  }
+  .complement-note{
+    margin-top:36px;
+    padding:20px 24px;
+    border-radius:var(--radius-md);
+    background:var(--forest-700);
+    color:var(--cream-100);
+    font-size:15px;
+    line-height:1.6;
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+  .complement-note svg{ flex:none; margin-top:2px; }
+
+  /* ---- Circles orbit ---- */
+  .orbit-wrap{
+    position:relative;
+    width:100%;
+    max-width:640px;
+    aspect-ratio:1/1;
+    margin:0 auto;
+  }
+  .orbit-center{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:118px; height:118px;
+    border-radius:50%;
+    background:var(--forest-700);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:0 20px 40px -18px rgba(20,43,33,0.5);
+  }
+  .orbit-center span{
+    font-family:var(--font-display);
+    font-style:italic;
+    color:var(--cream-100);
+    font-size:14.5px;
+    line-height:1.25;
+    padding:0 8px;
+  }
+  .orbit-ring{
+    position:absolute;
+    inset:6%;
+    border:1.5px dashed rgba(20,43,33,0.18);
+    border-radius:50%;
+  }
+  .chip{
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%,-50%) translate(var(--x), var(--y));
+    background:var(--cream-100);
+    border:1.5px solid rgba(20,43,33,0.14);
+    color:var(--forest-950);
+    font-size:13.5px;
+    font-weight:700;
+    padding:9px 15px;
+    border-radius:999px;
+    white-space:nowrap;
+    transition: background-color .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease);
+    cursor:default;
+  }
+  .chip:hover{
+    background:var(--lime-400);
+    border-color:var(--lime-400);
+    transform: translate(-50%,-50%) translate(var(--x), var(--y)) scale(1.06);
+  }
+  /* Mobile: ring becomes a wrapped cluster of chips (reliable + readable) */
+  @media (max-width:760px){
+    .orbit-wrap{ display:none; }
+    .chip-flow{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .chip-flow .chip{
+      position:static;
+      transform:none !important;
+    }
+    .chip-flow .chip:hover{ transform:translateY(-2px) !important; }
+  }
+  @media (min-width:761px){
+    .chip-flow{ display:none; }
+  }
+
+  /* ---- Final CTA band ---- */
+  .cta-band{
+    background:var(--forest-950);
+    color:var(--cream-100);
+    border-radius:var(--radius-lg);
+    padding:clamp(40px,6vw,72px);
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .cta-band{ grid-template-columns:1fr; } }
+  .cta-band h2{ color:var(--cream-100); font-size:clamp(26px,3.2vw,36px); line-height:1.2; }
+  .cta-band .section-head{ margin-bottom:0; max-width:none; }
+  .cta-band p{ color:var(--sage-200); margin-top:14px; font-size:16px; }
+  .cta-band .field label{ color:var(--sage-200); }
+  .cta-band .field input{ background:rgba(251,247,236,0.08); border-color:rgba(251,247,236,0.24); color:var(--cream-100); }
+  .cta-band .field input::placeholder{ color:rgba(251,247,236,0.45); }
+  .cta-band .field input:focus{ border-color:var(--lime-400); box-shadow:0 0 0 4px rgba(169,214,92,0.18); }
+  .cta-band .btn-primary{ background:var(--lime-400); color:var(--forest-950); }
+  .cta-band .btn-primary:hover{ background:var(--lime-300); box-shadow:0 14px 28px -12px rgba(0,0,0,0.4); }
+  .cta-band .microtrust{ color:var(--sage-200); }
+  .cta-band .form-msg[data-state="success"]{ color:var(--lime-400); }
+
+  /* ================= Footer ================= */
+  footer{ padding:56px 0 40px; }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:32px;
+    flex-wrap:wrap;
+    padding-bottom:28px;
+    border-bottom:1px solid rgba(20,43,33,0.12);
+  }
+  .footer-links{ display:flex; gap:24px; flex-wrap:wrap; }
+  .footer-links a{ font-size:14px; text-decoration:none; color:var(--forest-600); }
+  .footer-links a:hover{ color:var(--forest-950); }
+  .footer-bottom{
+    margin-top:24px;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:var(--forest-500);
+  }
+  .crisis-note{
+    max-width:640px;
+    line-height:1.6;
+    display:block;
+    margin-top:24px;
+    font-size:14px;
+    color:var(--forest-600);
+  }
+  .crisis-note strong{ color:var(--forest-700); }
+
+  /* reveal-on-scroll */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true"></span>
+      Healing Circle
+    </a>
+    <a class="btn btn-primary" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Private beta opening soon</p>
+        <h1>The safe place to heal.</h1>
+        <p class="hero-tagline">Healing doesn't have to be loud to be real.</p>
+
+        <div class="hero-highlights">
+          <div class="hero-highlight">
+            <span class="hero-highlight-badge" aria-hidden="true">💚</span>
+            <div>
+              <h3>Anonymous Community</h3>
+              <p>A private, judgment-free space where you can connect with people who understand your journey without revealing your identity or performing for an audience.</p>
+            </div>
+          </div>
+          <div class="hero-highlight">
+            <span class="hero-highlight-badge" aria-hidden="true">📈</span>
+            <div>
+              <h3>Habit &amp; Wellness Tracking</h3>
+              <p>Build awareness by tracking your sleep, stress, mood, and daily habits, helping you spot patterns early and make meaningful progress over time.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero-sub">
+          No followers. No pressure. No pretending. Just real healing, meaningful connections, and healthier habits — all in one safe place.
+        </p>
+
+        <div class="waiting-count">
+          <div class="avatar-stack" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <p><strong>13,247</strong> already waiting</p>
+        </div>
+        <p><strong> Join the waitlist today and enjoy your one month FREE when we launch.</strong></p>
+
+        <form class="waitlist-form" id="hero-form" novalidate>
+          <div class="field">
+            <label for="hero-email">Email address</label>
+            <input type="email" id="hero-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="hero-form-msg" />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <span class="btn-label">Join waitlist</span>
+          </button>
+        </form>
+        <p class="form-msg" id="hero-form-msg" role="status" aria-live="polite"></p>
+        <p class="microtrust">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Anonymous by design. No spam, ever.
+        </p>
+      </div>
+
+      <div class="cluster" aria-hidden="true">
+        <span class="c1"></span>
+        <span class="c2"></span>
+        <span class="c3"></span>
+        <span class="c4"></span>
+        <span class="c5"></span>
+        <div class="cluster-word"><span>a circle of people who get it</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROBLEM ================= -->
+  <section class="band-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why this exists</p>
+        <h2>Healing is hard to do in a place built to hold your attention, not your feelings.</h2>
+      </div>
+
+      <div class="validate-list">
+        <div class="validate-item reveal">
+          <span class="validate-glyph" aria-hidden="true"></span>
+          <p><strong>Most feeds work against you.</strong>By the time your day is over, your feed has shown you more bad news than support. That's not a personal failing — it's the design.</p>
+        </div>
+        <div class="validate-item reveal">
+          <span class="validate-glyph" aria-hidden="true"></span>
+          <p><strong>You wait for a crisis to check in.</strong>No one taught most of us to notice the small stuff — a bad stretch of sleep, a short fuse, a slow drift — before it becomes something bigger.</p>
+        </div>
+        <div class="validate-item reveal">
+          <span class="validate-glyph" aria-hidden="true"></span>
+          <p><strong>Healing in public isn't healing.</strong>Comparing your real bad days to everyone else's curated good ones is exhausting, and it was never a fair comparison.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What's different</p>
+        <h2>Built to notice the pattern, not just the crisis.</h2>
+        <p>Three things, working together — not another app competing for your attention.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="18" cy="20" r="9" stroke="#1F4A34" stroke-width="2"/>
+            <circle cx="31" cy="26" r="9" stroke="#A9D65C" stroke-width="2"/>
+          </svg>
+          <h3>Anonymous circles</h3>
+          <p>Topic-based communities — grief, anxiety, addiction recovery, divorce, and more — with people who've actually walked it. Your name stays yours.</p>
+        </div>
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <path d="M4 30l8-14 6 10 6-18 6 22 8-10" stroke="#1F4A34" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Habit &amp; trigger tracking</h3>
+          <p>A private daily check-in for sleep, stress, and mood — so the pattern behind hard days becomes visible, instead of easy to forget.</p>
+        </div>
+        <div class="feature-card reveal">
+          <svg class="feature-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <circle cx="24" cy="24" r="15" stroke="#1F4A34" stroke-width="2"/>
+            <path d="M24 15v9l6 4" stroke="#A9D65C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>A feed with nowhere to perform</h3>
+          <p>No likes, no doom-scroll, no highlight reel. Just a constructive, judgment-free space built for actual recovery.</p>
+        </div>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- ================= CIRCLES / ORBIT ================= -->
+  <section class="band-alt">
+    <div class="wrap">
+      <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+        <p class="eyebrow" style="justify-content:center;">Find your circle</p>
+        <h2>Whatever you're carrying, there's a circle for it.</h2>
+      </div>
+
+      <div class="orbit-wrap reveal" id="orbit">
+        <div class="orbit-ring" aria-hidden="true"></div>
+        <div class="orbit-center"><span>Healing Circle</span></div>
+        <!-- chips positioned via JS -->
+      </div>
+
+      <div class="chip-flow reveal" id="chip-flow"></div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section id="join">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <div>
+          <p class="eyebrow" style="color:var(--sage-200);">Founding members</p>
+          <h2>Join the waitlist today and enjoy your one month FREE when we launch..</h2>
+          <!-- <p>We're not open yet. Join the waitlist for early access, before we launch publicly.</p> -->
+        </div>
+        <div>
+          <div class="waiting-count">
+            <div class="avatar-stack" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p><strong>13,247</strong> already waiting</p>
+          </div>
+
+          <form class="waitlist-form" id="cta-form" novalidate style="max-width:none;">
+            <div class="field">
+              <label for="cta-email">Email address</label>
+              <input type="email" id="cta-email" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="cta-form-msg" />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span class="btn-label">Join waitlist</span>
+            </button>
+          </form>
+          <p class="form-msg" id="cta-form-msg" role="status" aria-live="polite"></p>
+          <p class="microtrust">No spam. No performance. Just space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="logo" href="#top">
+        <span class="logo-mark" aria-hidden="true"></span>
+        Healing Circle
+      </a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#join">Join waitlist</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+   
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Healing Circle. All rights reserved.</span>
+      <span>Private, anonymous, safe, judgment-free.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------
+     Waitlist form handling
+     -----------------------------------------------------------
+     This demo runs fully client-side: it validates the email,
+     shows a loading state, then a success state. No data is
+     persisted anywhere in the browser by design.
+
+     To make this collect real signups, replace `submitToWaitlist`
+     below with a real request — for example, a POST to your own
+     backend:
+
+         async function submitToWaitlist(email) {
+           const res = await fetch('/v1/api/waitlist/join/', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ email })
+           });
+           if (!res.ok) throw new Error('Request failed');
+           return res.json();
+         }
+
+     ...or point it at a third-party list provider (Mailchimp,
+     ConvertKit, Supabase, etc.) per that provider's API docs.
+  --------------------------------------------------------- */
+
+  function isValidEmail(value){
+    // Deliberately simple — matches "something@something.tld".
+    // Real validation (deliverability, disposable-domain checks)
+    // belongs server-side, not in client JS.
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+  }
+
+  function getCookie(name){
+    var match = document.cookie.match(new RegExp('(^|; )' + name + '=([^;]*)'));
+    return match ? decodeURIComponent(match[2]) : '';
+  }
+
+  async function submitToWaitlist(email){
+    // Real request: POSTs to the Django backend, which emails the
+    // signup to the site owner.
+    var res = await fetch('/v1/api/waitlist/join/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken')
+      },
+      body: JSON.stringify({ email: email })
+    });
+    if (!res.ok) throw new Error('Request failed');
+    return res.json();
+  }
+
+  function wireForm(formId, msgId){
+    var form = document.getElementById(formId);
+    var msg  = document.getElementById(msgId);
+    var input = form.querySelector('input[type="email"]');
+    var button = form.querySelector('button[type="submit"]');
+    var buttonLabel = button.querySelector('.btn-label');
+    var originalLabel = buttonLabel.textContent;
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      var email = input.value.trim();
+
+      if (!isValidEmail(email)){
+        input.setAttribute('aria-invalid', 'true');
+        msg.dataset.state = 'error';
+        msg.textContent = 'That email doesn\u2019t look quite right \u2014 mind double-checking it?';
+        input.focus();
+        return;
+      }
+
+      input.removeAttribute('aria-invalid');
+      button.disabled = true;
+      buttonLabel.textContent = 'Joining\u2026';
+      msg.dataset.state = '';
+      msg.textContent = '';
+
+      submitToWaitlist(email).then(function(){
+        msg.dataset.state = 'success';
+        msg.textContent = 'You\u2019re on the list. We\u2019ll email you the moment we open the doors.';
+        form.reset();
+      }).catch(function(){
+        msg.dataset.state = 'error';
+        msg.textContent = 'Something went wrong on our end \u2014 please try again in a moment.';
+      }).finally(function(){
+        button.disabled = false;
+        buttonLabel.textContent = originalLabel;
+      });
+    });
+
+    // Clear the error state as soon as the person starts fixing it.
+    input.addEventListener('input', function(){
+      if (input.getAttribute('aria-invalid') === 'true'){
+        input.removeAttribute('aria-invalid');
+        msg.dataset.state = '';
+        msg.textContent = '';
+      }
+    });
+  }
+
+  wireForm('hero-form', 'hero-form-msg');
+  wireForm('cta-form', 'cta-form-msg');
+
+  /* ---------------------------------------------------------
+     Circles orbit — positions each topic chip around the ring
+     using basic trigonometry, then mirrors the same list into
+     a wrapped flex layout for mobile (see CSS media query).
+  --------------------------------------------------------- */
+  var TOPICS = [
+    'Depression Support',
+    'Anxiety Support',
+    'Grief & Loss',
+    'Divorce Recovery',
+    'Breakups & Heartbreak',
+    'Single Parents',
+    'Addiction Recovery',
+    'Career Burnout',
+    "Women's Healing",
+    "Men's Wellness"
+  ];
+
+  function buildOrbit(){
+    var orbit = document.getElementById('orbit');
+    var flow = document.getElementById('chip-flow');
+    var radius = 44; // percentage of container
+
+    TOPICS.forEach(function(topic, i){
+      var angle = (i / TOPICS.length) * Math.PI * 2 - Math.PI / 2;
+      var x = Math.cos(angle) * radius;
+      var y = Math.sin(angle) * radius;
+
+      var chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip';
+      chip.textContent = topic;
+      chip.style.setProperty('--x', x.toFixed(2) + '%');
+      chip.style.setProperty('--y', y.toFixed(2) + '%');
+      orbit.appendChild(chip);
+
+      var flowChip = document.createElement('button');
+      flowChip.type = 'button';
+      flowChip.className = 'chip';
+      flowChip.textContent = topic;
+      flow.appendChild(flowChip);
+    });
+  }
+
+  buildOrbit();
+
+  /* ---------------------------------------------------------
+     Scroll reveal — simple IntersectionObserver fade-up.
+  --------------------------------------------------------- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+})();
+</script>
+
+</body>
+</html>
