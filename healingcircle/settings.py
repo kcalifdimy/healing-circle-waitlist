@@ -21,7 +21,7 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,https://healing-circle-waitlist-q8uuqpxi7-healing-circle.vercel.app/").split(",")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,https://healing-circle-waitlist-q8uuqpxi7-healing-circle.vercel.app/, healing-circle-waitlist.vercel.app").split(",")
 
 INSTALLED_APPS = [
     "django.contrib.contenttypes",
